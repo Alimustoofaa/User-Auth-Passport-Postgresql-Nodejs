@@ -17,7 +17,7 @@ module.exports = function(passport){
         loginUser()
         async function loginUser(){
             try{
-                db.one('SELECT id, name, username, email, password, role FROM users WHERE username = $1', [username])
+                db.one('SELECT id, name, username, email, password, role FROM users WHERE email = $1', [username])
                 .then((result) => {
                     bcrypt.compare(password, result.password, (err, valid)=>{
                         if(err){
