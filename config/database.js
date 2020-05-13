@@ -2,7 +2,7 @@ const pgp = require('pg-promise')();
 const connection = {
     host: 'localhost',
     port: 5432,
-    database: 'db_poc',
+    database: 'db_msDavid',
     user: 'postgres',
     password: 'root',
     max: 10000 // use up to 30 connections

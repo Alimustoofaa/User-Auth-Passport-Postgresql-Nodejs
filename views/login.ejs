@@ -6,18 +6,10 @@
             <div class="auto-form-wrapper">
              
               <form action="/login" method="POST">
-                <% if(typeof error !== 'undefined' && error && error.length > 0) { %>
-                  <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
-                    <strong><%= error %></strong>
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>>
-                <% } %>
                 <div class="form-group">
-                  <label class="label">Username</label>
+                  <label class="label">email</label>
                   <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Username" id="username" name="username" autofocus>
+                    <input type="email" class="form-control" placeholder="email" id="email" name="email" autofocus>
                     <div class="input-group-append">
                       <span class="input-group-text">
                         <i class="mdi mdi-check-circle-outline"></i>
@@ -36,6 +28,12 @@
                     </div>
                   </div>
                 </div>
+                <div class="form-grub">
+                  <% if(typeof error !== 'undefined' && error && error.length > 0) { %>
+                    <label class="text-small" style="color: red; text-align: center; font-weight: bold;">*<%= error %></label>
+                  <% } %>
+                </div>
+                <br>
                 <div class="form-group">
                   <button class="btn btn-primary submit-btn btn-block">Login</button>
                 </div>

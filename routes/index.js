@@ -18,7 +18,7 @@ router.post('/login', (req, res, next) => {
       req.flash('success', 'You are already logged in.')
       res.redirect('/')
   } else {
-      let user = (req.body.username).toLowerCase()
+      let user = req.body.email
       let pass = req.body.password
       if (user.length === 0 || pass.length === 0) {
           req.flash('error', 'You must provide a username and password.')

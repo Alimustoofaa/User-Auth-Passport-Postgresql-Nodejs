@@ -15,7 +15,8 @@ class C_Login{
         }else{
             res.render('login', {
                 title: 'Login',
-                message: res.locals.message
+                error: res.locals.error,
+                success:  res.locals.success
             })
         }
     }
