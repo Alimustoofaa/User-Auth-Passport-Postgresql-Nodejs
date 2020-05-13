@@ -19,7 +19,6 @@ app.set('view engine', 'ejs');
 
 
 app.use(logger('dev'));
-app.use(cookieParser());
 app.use(session({
   secret: 'thatsecretthinggoeshere',
   resave: false,
@@ -31,10 +30,6 @@ app.use(flash())
 app.use(passport.initialize())
 app.use(passport.session())
 
-app.use('/', indexRouter);
-require('./config/passport')(passport)
-
-// error handler
 app.use(function(req, res, next) {
   let error = req.flash('error');
   res.locals.error = error.length ? error:null;
@@ -43,5 +38,10 @@ app.use(function(req, res, next) {
   //res.locals.message = req.flash('message');
   next();
 });
+
+app.use('/', indexRouter);
+require('./config/passport')(passport)
+
+// error handler
 
 module.exports = app;
