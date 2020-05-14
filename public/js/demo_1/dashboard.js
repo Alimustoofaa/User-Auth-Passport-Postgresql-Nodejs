@@ -999,5 +999,74 @@
         counter: true
       });
     }
+
+    //5 Negara import
+    var negaraExportCanvas = document.getElementById("negara-export")
+    var negaraExport = new Chart(negaraExportCanvas,{
+      type: 'bar',
+      data: {
+       labels: ["CN", "JP", "SG", "AS", "IT"],
+    datasets: [
+      {
+        label: "Thousands (RP)",
+        backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+        data: [200, 150, 100, 120, 70]
+      }
+      ]
+      },
+      options: {
+        legend: { display: false },
+        title: {
+          display: true,
+          
+        }
+      }
+    })
+    
+    //5 Pelabuhan pemasukan terbesar
+    var pelabuhanExportCanvas = document.getElementById("pelabuhan-pemasukan")
+    var pelabuhanExport = new Chart(pelabuhanExportCanvas,{
+      type: 'bar',
+      data: {
+      labels: ["TPK", "BLW", "MKS", "TES", "TLG"],
+      datasets: [
+      {
+        label: "Thousands (RP)",
+        backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+        data: [200, 50, 30, 80, 70]
+      }
+    ]
+      },
+      options: {
+        legend: { display: false },
+        title: {
+          display: true,
+          
+        }
+      }
+    })
+
+    //Perkembangan realisasi import 
+    var perkemRealisExportCanvas = document.getElementById("perkembangan-realisasi")
+    var perkemRealisExport = new Chart(perkemRealisExportCanvas,{
+      type: 'bar',
+      data: {
+      labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+      datasets: [
+      {
+        label: "Thousands (RP)",
+        backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+        data: [200, 50, 30, 80, 70]
+      }
+    ]
+      },
+      options: {
+        legend: { display: false },
+        title: {
+          display: true,
+          
+        }
+      }
+    })
   });
 })(jQuery);
