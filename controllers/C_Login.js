@@ -1,14 +1,6 @@
 const passport = require('passport')
 
 class C_Login{
-    index(req, res){
-        if(req.isAuthenticated()){
-            res.render('index', {title: 'Index'})
-        }else{
-            res.redirect('/login')
-        }
-    }
-    
     login(req, res){
         if(req.isAuthenticated()){
             res.redirect('/')
